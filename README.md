@@ -74,13 +74,6 @@ src/
    npm run dev
    ```
 
-### Available Scripts
-
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality checks
-
 ## Usage
 
 1. **Launch the Application**: Click "Create Department" to start the wizard
@@ -116,10 +109,10 @@ The application includes a comprehensive mock API that simulates real backend be
 
 ### Features
 
-- **Realistic Delays**: Simulates network latency (600-1200ms)
-- **Error Simulation**: Random failures to test error handling
 - **Data Validation**: Server-side validation with error messages
 - **Loading States**: Proper loading indicators during API calls
+- **Error Simulation**: Random failures to test error handling
+- **Realistic Delays**: Simulates network latency (600-1200ms)
 
 ## Form Validation
 
@@ -147,25 +140,3 @@ The application is fully responsive with:
 - **Mobile First**: Optimized for mobile devices
 - **Breakpoints**: Tailored layouts for mobile, tablet, and desktop
 - **Flexible Grid**: Adaptive layouts that work on any screen size
-- **Touch Friendly**: Appropriate touch targets for mobile users
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Future Enhancements
-
-- **Data Persistence**: Connect to a real database
-- **User Authentication**: Add login/logout functionality
-- **Department Management**: Edit and delete existing departments
-- **Role Creation**: Allow creating custom roles
-- **Bulk Operations**: Handle multiple departments at once
-- **Export Functionality**: Export department data to CSV/PDF
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).

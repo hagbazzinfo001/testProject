@@ -144,6 +144,18 @@ export const CreateDepartmentWizard: React.FC<CreateDepartmentWizardProps> = ({
       // Error is handled by the hook and displayed in UI
     }
   };
+  const isStepValid = () => {
+    if (currentStep === 1) {
+      return formData.name.trim() !== "" && formData.description.trim() !== "";
+    }
+    if (currentStep === 2) {
+      return formData.selectedRoles.length > 0;
+    }
+    if (currentStep === 3) {
+      return true; // already confirmed
+    }
+    return false;
+  };
 
   const renderStepContent = () => {
     switch (currentStep) {
@@ -185,9 +197,9 @@ export const CreateDepartmentWizard: React.FC<CreateDepartmentWizardProps> = ({
             </h1>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-gray-400 hover:text-gray-600 transition-colors flex items-center gap-2"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6" /> Cancel
             </button>
           </div>
 
@@ -211,7 +223,7 @@ export const CreateDepartmentWizard: React.FC<CreateDepartmentWizardProps> = ({
             )}
           </div>
 
-          <div className="flex justify-between items-center p-6 bg-gray-50 border-t">
+          <div className="flex justify-end items-center p-6 bg-gray-50 border-t gap-4">
             <Button
               variant="outline"
               onClick={currentStep === 1 ? onClose : handleBack}
@@ -223,6 +235,7 @@ export const CreateDepartmentWizard: React.FC<CreateDepartmentWizardProps> = ({
               onClick={currentStep === 3 ? handleFinish : handleNext}
               loading={createDepartmentApi.loading}
               disabled={currentStep === 2 && rolesApi.loading}
+              variant={isStepValid() ? "primary" : "secondary"} // 🔵 only if valid
             >
               {currentStep === 3 ? "FINISH" : "NEXT"}
             </Button>

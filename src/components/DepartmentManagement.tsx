@@ -416,6 +416,7 @@ export const DepartmentManagement: React.FC<DepartmentManagementProps> = ({
                     <td className="py-4 px-6">
                       <Button
                         variant="outline"
+                        className="!text-blue-600 border-blue-800 hover:bg-blue-50"
                         size="sm"
                         onClick={() => handleManage(department.id)}
                       >
