@@ -241,6 +241,13 @@ export const CreateDepartmentWizard: React.FC<CreateDepartmentWizardProps> = ({
             </Button>
           </div>
         </div>
+        <p className="text-center text-sm text-gray-500 mt-6 pb-4">
+          &copy; {new Date().getFullYear()}
+          <span className="font-semibold text-blue-600">
+            Lytical Technology
+          </span>
+          . All rights reserved.
+        </p>
       </div>
     </div>
   );
